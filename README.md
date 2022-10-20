@@ -1,6 +1,12 @@
 # MyApp
 
+Angular web application that consumes ASP.NET Core Web API (repository name: my-app-api).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+
+Angular CLI: 14.1.0
+Node: 16.15.0
+Package Manager: npm 8.5.5
 
 ## Development server
 
