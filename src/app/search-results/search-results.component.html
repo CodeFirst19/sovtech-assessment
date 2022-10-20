@@ -1,0 +1,57 @@
+<div class="px-2 py-4">
+  <h1 class="mb-0">Your Search Results</h1>
+  <small class="text-muted">Includes jokes and star-wars people</small>
+  <div class="px-5 py-5" *ngIf="showLoader">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+  <div *ngIf="!showLoader">
+    <div class="jokes mt-4">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="bg-dark">
+            <mat-panel-title>
+              Jokes Results
+            </mat-panel-title>
+            <mat-panel-description>
+              Click to expand
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="mt-4">
+            <p *ngIf="!jokes || jokes.length <= 0">No resluts found</p>
+            <div *ngIf="jokes && jokes.length > 0">
+              <div class="row">
+                <div class="col-md-4" *ngFor="let joke of jokes">
+                  <app-joke-card [joke]="joke" [cardClasses]="'card-deck mt-4'"></app-joke-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="star-wars-people mt-4">
+      <mat-accordion>
+        <mat-expansion-panel >
+          <mat-expansion-panel-header class="bg-dark">
+            <mat-panel-title>
+              Star Wars People Results
+            </mat-panel-title>
+            <mat-panel-description>
+              Click to expand
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="mt-4">
+            <p *ngIf="!people || people.length <= 0">No resluts found</p>
+            <div *ngIf="people && people.length > 0">
+              <div class="row">
+                <div class="col-md-4" *ngFor="let person of people">
+                  <app-person-card [person]="person"></app-person-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

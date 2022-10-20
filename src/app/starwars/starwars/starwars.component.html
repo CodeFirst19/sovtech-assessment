@@ -1,0 +1,15 @@
+<div class="px-2 py-4">
+  <h1 class="mb-0">Star Wars People</h1>
+  <small class="text-muted">All the Star Wars People You have Always Wanted to Know</small>
+  <div class="px-5 py-5" *ngIf="showLoader">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+  <div *ngIf="!showLoader">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let person of people">
+        <div class="card-deck mt-4">
+          <app-person-card [person]="person"></app-person-card>
+      </div>
+    </div>
+  </div>
+</div>

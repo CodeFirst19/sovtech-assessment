@@ -1,0 +1,14 @@
+<div class="px-2 py-4">
+  <div class="loader">
+
+  </div>
+  <div class="spinner-container" *ngIf="showLoader">
+    <h1 class="mb-0">Fetching a Joke</h1>
+    <small class="text-muted">Please wait while we fetch a joke for you...</small>
+    <mat-spinner color="accent" class="mt-5"></mat-spinner>
+  </div>
+  <div *ngIf="!showLoader">
+    <h1 class="mb-0">Random Joke</h1>
+    <small class="text-muted">We have randomly generated a joke for you</small>
+    <app-joke-card [joke]="joke" [cardClasses]="'card-deck mt-4 w-50'"></app-joke-card>
+</div>

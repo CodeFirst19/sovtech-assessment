@@ -1,0 +1,23 @@
+<div class="px-2 py-4">
+  <h1 class="mb-0">All Joke Categories</h1>
+  <small class="text-muted">Click any category you like to generage a random joke</small>
+  <div class="px-5 py-5" *ngIf="showLoader">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+  <div *ngIf="!showLoader">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let category of categories">
+        <div class="alert alert-success mt-4" role="alert" (click)="onFetchJoke(category)" >
+          <div class="row">
+            <div class="col-md-6">
+              <p class="fw-bold category">{{ category }}</p>
+            </div>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-sm float-end">Click Me!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

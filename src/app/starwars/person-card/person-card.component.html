@@ -1,0 +1,10 @@
+<div class="card">
+  <img class="card-img-top" [src]="cardImageUrl" alt="Icon">
+  <div class="card-body bg-light mt-2">
+    <h5 class="card-title"><span class="fw-bold">Name:</span> {{ person.name | titlecase }}</h5>
+    <p class="card-text">
+      {{ person.name | titlecase }} is a {{ person.gender | titlecase }} who was born in {{ person.birthYear }}.
+    </p>
+    <p class="card-text"><small class="text-muted">Height: {{ person.height }} </small></p>
+  </div>
+</div>

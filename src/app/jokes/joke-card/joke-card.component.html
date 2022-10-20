@@ -1,0 +1,9 @@
+<div [class]="cardClasses">
+  <div class="card">
+    <img class="card-img-top" [src]="cardImageUrl" alt="Icon">
+    <div class="card-body bg-light mt-2">
+      <h5 class="card-title"><span class="fw-bold">Category:</span> {{ joke.categories[0] | titlecase }}</h5>
+      <p class="card-text">{{ joke.value }}</p>
+      <p class="card-text"><small class="text-muted">{{ joke.updatedAt | date:'medium' }} </small></p>
+  </div>
+</div>
